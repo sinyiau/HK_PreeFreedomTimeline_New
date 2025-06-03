@@ -46,8 +46,7 @@ header h2 {
 .content-block {
     display: grid; /* 確保這行還在 */
     /* 修改這一行，讓左右兩欄變窄一些 */
-    grid-template-columns: clamp(120px, 14vw, 190px) minmax(0, 3.5fr) clamp(120px, 14vw, 190px);
-    
+    grid-template-columns: clamp(120px, 14vw, 190px) minmax(0, 4.5fr) clamp(100px, 14vw, 100px);
     gap: 2vw; /* 或你設定的固定間距 */
     padding: 50px 3vw; /* 或你設定的固定內距 */
     max-width: 1600px;
@@ -120,45 +119,62 @@ header h2 {
 }
 
 /* Sticky Side Information Container Blocks */
-.left-info, .right-info {
+.left-info {
     position: -webkit-sticky;
     position: sticky;
-    top: 0px; /* Adjusted sticky offset */
-    align-self: start;
-    
-    padding: 10px 10px; /* Adjusted padding */
-    text-align: left;
+    top: 0px; /* 你設定的 sticky offset */
+    align-self: start; /* 格線佈局中的對齊 */
     height: fit-content; 
+
+    display: flex;          /* 啟用 Flexbox */
+    flex-direction: column; /* 子元素垂直堆疊 */
+    /* align-items: stretch; /* 預設值，子元素會嘗試填滿交叉軸的寬度，這對 text-align 有幫助 */
+
+    /* 調整 padding 以符合需求 */
+    padding-top: 10px;    /* 你原有的上下 padding */
+    padding-bottom: 10px;
+    padding-left: 10px;   /* 你原有的左 padding */
+    padding-right: 10px;  /* ★★★ 分隔線與內容的距離 ★★★ */
+    
+    border-right: 1px solid #444444; /* 分隔線顏色，請改成你深色主題適合的顏色 */
 }
 
 /* Year display inside .left-info */
 .year-display {
-    font-size: 4em; /* Larger year */
+    font-size: 4em; 
     font-weight: 700;
-    color: lightsteelblue;
+    color: lightsteelblue; 
     line-height: 1;
     font-family: 'Lora', serif;
+    margin-bottom: 15px; /* 與下方排名資訊的間距 */
+    
+    text-align: right; /* ★★★ 年份文字靠右對齊 ★★★ */
+    width: 100%;       /* 確保它佔滿 .left-info 的寬度，text-align:right 才能正確作用 */
 }
 
-/* Rank display elements inside .right-info */
-.rank-display-large { /* For "Ranking: 53" */
+.rank-display-large { 
     font-size: 1.4em; 
     font-weight: 700;
-    color: #dc3545; /* Red for ranking number */
+    color: #dc3545; 
     line-height: 1.2;
-    margin-bottom: 10px; /* Space to the smaller text below */
     font-family: 'Lora', serif;
-    text-align: center;
+    margin-bottom: 8px; /* 與下方 .rank-display-small 的間距 */
+    
+    text-align: center; /* ★★★ 主要排名文字置中對齊 ★★★ */
+    width: 100%;        /* 確保它佔滿 .left-info 的寬度，text-align:center 才能正確作用 */
 }
 
-.rank-display-small { /* For "down 24" or similar text */
-    font-size: 1.3em; 
-    color: #dc3545; /* Dark grey for detail text */
+.rank-display-small { 
+    font-size: 1.3em; /* 你設定的字體大小 */
+    color: #dc3545; /* 你設定的文字顏色 */
     line-height: 1.4;
-    padding: 6px 10px; /* Slightly more padding */
-    border-radius: 5px; 
-    display: center;
-    min-width: 80px; /* Ensure a minimum width for better appearance */
+    display: block;         /* ★★★ 讓它成為一個區塊元素 ★★★ */
+    width: fit-content;     /* ★★★ 讓區塊的寬度自適應內容的寬度 (背景會緊貼內容) ★★★ */
+    margin-left: auto;      /* ★★★ 與 margin-right: auto; 配合，實現區塊的水平置中 ★★★ */
+    margin-right: auto;
+    text-align: center;     /* ★★★ 確保區塊內部的文字也是置中的 ★★★ */
+    
+    min-width: 80px; /* 你原有的最小寬度 */
 }
 
 /* Footer */
