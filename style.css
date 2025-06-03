@@ -1,58 +1,57 @@
 /* Basic Setup & Typography */
 body {
-    font-family: 'Noto Sans TC', 'Lora', serif; /* Added Noto Sans TC for better Chinese character rendering */
+    font-family: 'Lora', serif; /* Added Noto Sans TC for better Chinese character rendering */
     margin: 0;
     line-height: 1.7; /* Increased for better readability */
-    color: #333;
-    background-color: #fff; /* Changed to white background for a cleaner look */
+    color:  #f0f0f0;
+    background-color: #222222; /* Changed to white background for a cleaner look */
 }
 
 header {
+    background-color: #222222;
+    padding: 7em 1em 1.5em 1em;
     text-align: center;
-    padding: 40px 20px 30px 20px; /* Adjusted padding */
-    background-color: #2c3e50; /* Darker, more modern header color */
-    color: #ecf0f1; /* Lighter text color for header */
-    border-bottom: 5px solid #3498db; /* Accent color border */
+    color: #f0f0f0;
 }
 
 header h1 {
     margin: 0 0 10px 0;
-    font-size: 2.8em; /* Slightly reduced for balance */
+    font-size: 2.6em; /* Slightly reduced for balance */
     font-weight: 700;
     font-family: 'Lora', serif;
 }
 
 header h2 {
     margin: 0 0 15px 0; /* Increased bottom margin */
-    font-size: 1.4em; /* Slightly reduced */
-    font-weight: 400;
-    color: #bdc3c7; /* Softer subtitle color */
+    font-size: 2.53em; /* Slightly reduced */
+    font-weight: 700;
+    color: f#0f0f0; /* Softer subtitle color */
     font-family: 'Lora', serif;
 }
 
 .byline {
-    font-size: 1em;
-    color: #95a5a6; /* Softer byline color */
-    font-style: italic;
+    font-size: 1.2em;
+    color: #f0f0f0; /* Softer byline color */
 }
 
 /* Main Content Column Layout */
 .main-story-column {
     margin: 0 auto;
     padding: 0; /* Will be handled by content-block or specific sections if needed */
+    max-width: 900px;
+    margin: 30px auto;
+    min-height: 400px;
 }
 
 .content-block {
-    display: grid;
-    grid-template-columns: 1fr 3.5fr 1fr; /* Adjusted column ratios: e.g., 180px 3.5fr 180px for wider screens */
-    /* Consider using percentages or fr units for more responsiveness: e.g., 1.5fr 5fr 1.5fr */
-    /* Or fixed widths with media queries */
-    /* grid-template-columns: clamp(120px, 15vw, 200px) minmax(0, 3.5fr) clamp(120px, 15vw, 200px); */
-    gap: 2vw; /* Use viewport width for gap, or a fixed value like 30px */
-    padding: 50px 3vw; /* Vertical and horizontal padding based on viewport width */
-    border-bottom: 1px solid #e0e0e0;
-    max-width: 1600px; /* Max width for the content area within main-story-column */
-    margin: 0 auto; /* Center content-blocks if main-story-column is full width */
+    display: grid; /* 確保這行還在 */
+    /* 修改這一行，讓左右兩欄變窄一些 */
+    grid-template-columns: clamp(120px, 14vw, 190px) minmax(0, 3.5fr) clamp(120px, 14vw, 190px);
+    
+    gap: 2vw; /* 或你設定的固定間距 */
+    padding: 50px 3vw; /* 或你設定的固定內距 */
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .content-block:last-child {
@@ -63,27 +62,27 @@ header h2 {
 /* Narrative Content Area */
 .narrative-content {
     grid-column: 2 / 3;
-    font-size: 1.1em;
-    color: #495057; /* Slightly softer text color */
+    font-size: 1em;
+    color: #f0f0f0; /* Slightly softer text color */
 }
 
 .narrative-content h3 {
-    font-size: 2em; /* Larger event titles */
+    font-size: 1.5em; /* Larger event titles */
     margin-top: 0;
     margin-bottom: 25px;
-    color: #343a40; /* Darker heading color */
+    color: #f0f0f0; /* Darker heading color */
     font-family: 'Lora', serif;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.3;
 }
 
 .narrative-content h4 {
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin-top: 30px;
     margin-bottom: 10px;
-    color: #495057;
+    color: lightsteelblue;
     font-family: 'Lora', serif;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .narrative-content p {
@@ -91,10 +90,8 @@ header h2 {
 }
 
 .content-image-container {
-    margin: 25px 0;
-    border-radius: 8px; /* Rounded corners for image container */
+    margin: 30px 0;
     overflow: hidden; /* Ensures image respects border-radius */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Subtle shadow for images */
 }
 
 .content-image-container img {
@@ -104,7 +101,7 @@ header h2 {
 }
 
 .image-source {
-    font-size: 0.85em;
+    font-size: 0.75em;
     color: #6c757d; /* Softer source text color */
     text-align: right;
     margin-top: 8px;
@@ -112,9 +109,9 @@ header h2 {
 }
 
 .source-link {
-    color: #007bff; /* Standard link blue */
+    color: lightsteelblue;
     text-decoration: none;
-    font-size: 0.8em;
+    font-size: 0.6em;
     vertical-align: super;
 }
 
@@ -126,14 +123,11 @@ header h2 {
 .left-info, .right-info {
     position: -webkit-sticky;
     position: sticky;
-    top: 60px; /* Adjusted sticky offset */
+    top: 0px; /* Adjusted sticky offset */
     align-self: start;
     
-    padding: 20px 15px; /* Adjusted padding */
-    border-radius: 10px; /* Slightly larger border radius */
-    background-color: #f8f9fa;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07); /* Adjusted shadow */
-    text-align: center;
+    padding: 10px 10px; /* Adjusted padding */
+    text-align: left;
     height: fit-content; 
 }
 
@@ -141,29 +135,29 @@ header h2 {
 .year-display {
     font-size: 4em; /* Larger year */
     font-weight: 700;
-    color: #007bff; /* Bright blue for year */
+    color: lightsteelblue;
     line-height: 1;
     font-family: 'Lora', serif;
 }
 
 /* Rank display elements inside .right-info */
 .rank-display-large { /* For "Ranking: 53" */
-    font-size: 1.8em; 
+    font-size: 1.4em; 
     font-weight: 700;
     color: #dc3545; /* Red for ranking number */
     line-height: 1.2;
     margin-bottom: 10px; /* Space to the smaller text below */
     font-family: 'Lora', serif;
+    text-align: center;
 }
 
 .rank-display-small { /* For "down 24" or similar text */
-    font-size: 0.95em; 
-    color: #495057; /* Dark grey for detail text */
+    font-size: 1.3em; 
+    color: #dc3545; /* Dark grey for detail text */
     line-height: 1.4;
-    background-color: #e9ecef; 
     padding: 6px 10px; /* Slightly more padding */
     border-radius: 5px; 
-    display: inline-block; 
+    display: center;
     min-width: 80px; /* Ensure a minimum width for better appearance */
 }
 
@@ -171,9 +165,9 @@ header h2 {
 footer {
     text-align: center;
     padding: 40px 20px;
-    background-color: #2c3e50; /* Consistent with header */
-    color: #95a5a6; /* Consistent with header byline */
-    font-size: 0.9em;
+    background-color: lightslategray; /* Consistent with header */
+    color: #f0f0f0; /* Consistent with header byline */
+    font-size: 1.1em;
     margin-top: 50px;
 }
 
