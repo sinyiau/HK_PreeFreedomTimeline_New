@@ -12,11 +12,16 @@ header {
     padding: 7em 1em 1.5em 1em;
     text-align: center;
     color: #f0f0f0;
+    width: 80%;        /* ★★★ 寬度設為可視區的 70% ★★★ */
+    max-width: 1200px; /* 可選：在非常大的螢幕上，限制一個最大像素寬度 */
+    margin-left: auto;   /* ★★★ 配合 width: 70%; 實現水平置中 ★★★ */
+    margin-right: auto;
+    margin-bottom: 40px; /* 與下方內容的間距 */
 }
 
 header h1 {
     margin: 0 0 10px 0;
-    font-size: 2.6em; /* Slightly reduced for balance */
+    font-size: 2.5em; /* Slightly reduced for balance */
     font-weight: 700;
     font-family: 'Lora', serif;
 }
@@ -43,14 +48,37 @@ header h2 {
     min-height: 400px;
 }
 
+.introductory-text {
+    /* 這個區塊在 .main-story-column (max-width: 900px) 內部 */
+    width: 70%;        /* ★★★ 寬度設為其父容器 (.main-story-column) 寬度的 70% ★★★ */
+    margin-left: auto;   /* ★★★ 在 .main-story-column 內部水平置中 ★★★ */
+    margin-right: auto;
+    margin-top: 20px;    /* 與 header 或 main 頂部的間距 */
+    margin-bottom: 50px; /* 與下方圖表預留位置的間距 */
+    
+    color: #e0e0e0;      /* 在深色背景上使用稍亮的文字顏色 */
+    font-size: 1.1em;    /* 可調整的字體大小 */
+    line-height: 1.8;    /* 增加行高以提高可讀性 */
+    text-align: left;    /* 簡介文字通常靠左對齊更易讀，如果需要置中可改為 center */
+}
+
+.introductory-text p {
+    margin-bottom: 1.2em; /* 段落之間的間距 */
+}
+
+.introductory-text p:last-child {
+    margin-bottom: 0; /* 最後一段下方不需要額外間距 */
+}
+
 .content-block {
-    display: grid; /* 確保這行還在 */
-    /* 修改這一行，讓左右兩欄變窄一些 */
-    grid-template-columns: clamp(120px, 14vw, 190px) minmax(0, 4.5fr) clamp(100px, 14vw, 100px);
-    gap: 2vw; /* 或你設定的固定間距 */
-    padding: 50px 3vw; /* 或你設定的固定內距 */
-    max-width: 1600px;
+    display: grid;
+    grid-template-columns: 20% 60% 14%;
+    gap: 2vw;
+    width: 100%;
+    padding: 50px 0;
     margin: 0 auto;
+    max-width: none;
+
 }
 
 .content-block:last-child {
@@ -61,7 +89,9 @@ header h2 {
 /* Narrative Content Area */
 .narrative-content {
     grid-column: 2 / 3;
-    font-size: 1em;
+    align-self: start;
+    font-size: 1.1em;
+    font-weight: 400;
     color: #f0f0f0; /* Slightly softer text color */
 }
 
@@ -136,8 +166,10 @@ header h2 {
     padding-left: 10px;   /* 你原有的左 padding */
     padding-right: 10px;  /* ★★★ 分隔線與內容的距離 ★★★ */
     
-    border-right: 1px solid #444444; /* 分隔線顏色，請改成你深色主題適合的顏色 */
+    border-right: 1px solid lightsteelblue /* 分隔線顏色，請改成你深色主題適合的顏色 */
 }
+
+
 
 /* Year display inside .left-info */
 .year-display {
@@ -154,7 +186,7 @@ header h2 {
 
 .rank-display-large { 
     font-size: 1.4em; 
-    font-weight: 700;
+    font-weight: 750;
     color: #dc3545; 
     line-height: 1.2;
     font-family: 'Lora', serif;
@@ -165,7 +197,7 @@ header h2 {
 }
 
 .rank-display-small { 
-    font-size: 1.3em; /* 你設定的字體大小 */
+    font-size: 1.2em; /* 你設定的字體大小 */
     color: #dc3545; /* 你設定的文字顏色 */
     line-height: 1.4;
     display: block;         /* ★★★ 讓它成為一個區塊元素 ★★★ */
@@ -173,8 +205,9 @@ header h2 {
     margin-left: auto;      /* ★★★ 與 margin-right: auto; 配合，實現區塊的水平置中 ★★★ */
     margin-right: auto;
     text-align: center;     /* ★★★ 確保區塊內部的文字也是置中的 ★★★ */
-    
     min-width: 80px; /* 你原有的最小寬度 */
+    font-family: 'Lora', serif;
+    font-weight: 500;
 }
 
 /* Footer */

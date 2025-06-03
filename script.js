@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (rankDisplayLarge) {
             if (rankNumber) {
-                rankDisplayLarge.textContent = `Ranking: ${rankNumber}`; // Adds "Ranking: " prefix
+                rankDisplayLarge.textContent = `Ranking : ${rankNumber}`; // Adds "Ranking: " prefix
             } else {
                 // console.warn(`Block ${index + 1} (ID: ${block.id || 'N/A'}) is missing data-rank-large attribute.`);
                 // rankDisplayLarge.textContent = 'Ranking: N/A'; // Or leave blank
