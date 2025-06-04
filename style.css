@@ -106,7 +106,7 @@ header h2 {
     font-size: 1.4em;
     margin-top: 30px;
     margin-bottom: 10px;
-    color: lightsteelblue;
+    color: #CCCCCC;
     font-family: 'Lora', serif;
     font-weight: 500;
 }
@@ -160,7 +160,7 @@ header h2 {
     padding-left: 10px;   
     padding-right: 10px; 
     
-    border-right: 1px solid lightsteelblue 
+    border-right: 1px solid #CCCCCC;
 }
 
 
@@ -169,7 +169,7 @@ header h2 {
 .year-display {
     font-size: 4em; 
     font-weight: 700;
-    color: lightsteelblue; 
+    color: #CCCCCC;
     line-height: 1;
     font-family: 'Lora', serif;
     margin-bottom: 15px; 
